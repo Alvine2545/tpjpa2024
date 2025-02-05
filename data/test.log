@@ -1,0 +1,13 @@
+/*C1*/SET SCHEMA SYSTEM_LOBS
+INSERT INTO BLOCKS VALUES(0,2147483647,0)
+COMMIT
+/*C3*/SET SCHEMA PUBLIC
+create sequence Concert_SEQ start with 1 increment by 50
+create sequence Role_SEQ start with 1 increment by 50
+create sequence Ticket_SEQ start with 1 increment by 50
+create sequence User_SEQ start with 1 increment by 50
+create table Concert (id bigint not null, primary key (id))
+create table Role (id bigint not null, name varchar(255), primary key (id))
+create table Ticket (id bigint not null, primary key (id))
+create table User (id bigint not null, primary key (id))
+DISCONNECT
