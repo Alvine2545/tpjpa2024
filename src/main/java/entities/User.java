@@ -1,8 +1,6 @@
 package entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class User {
@@ -17,6 +15,30 @@ public class User {
     String name_entreprise;
     int age;
 
+    Role role;
+
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public User() {}
+    public User(String name, String password, String email, String phone, String address, String city, int age, Role
+            role) {
+        this.name = name;
+        this.password = password;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
+        this.city = city;
+        this.age = age;
+        this.role = role;
+    }
     @Id
     @GeneratedValue
     public Long getId() {

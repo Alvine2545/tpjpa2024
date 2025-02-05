@@ -12,7 +12,10 @@ public class Role {
     public Role() {
         super();
     }
-    public Role(long id, String name) {}
+    public Role(String name) {
+        super();
+        this.name = name;
+    }
 
     public String getName() {
         return name;
@@ -30,4 +33,5 @@ public class Role {
     public Long getId() {
         return id;
     }
+
 }
