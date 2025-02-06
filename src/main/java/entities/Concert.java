@@ -3,6 +3,9 @@ package entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
+import java.util.ArrayList;
 
 @Entity
 public class Concert {
@@ -15,6 +18,7 @@ public class Concert {
     int nbr_ticket;
     String capacity;
     String price;
+    ArrayList<Ticket> tickets;
 
     public void setId(Long id) {
         this.id = id;
@@ -66,6 +70,13 @@ public class Concert {
     }
     public String getPrice() {
         return price;
+    }
+    public void setTickets(ArrayList<Ticket> tickets) {
+        this.tickets = tickets;
+    }
+    @OneToMany
+    public ArrayList<Ticket> getTickets() {
+        return tickets;
     }
 
 }

@@ -1,8 +1,6 @@
 package entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -13,6 +11,8 @@ public class Ticket {
     String description;
     Date date;
     String place;
+    Concert concert;
+    User user;
 
     public void setId(Long id) {
         this.id = id;
@@ -38,6 +38,7 @@ public class Ticket {
     public void setDate(Date date) {
         this.date = date;
     }
+    @Temporal(TemporalType.DATE)
     public Date getDate() {
         return date;
     }
@@ -47,5 +48,28 @@ public class Ticket {
     public String getPlace() {
         return place;
     }
+
+    public void setConcert(Concert concert) {
+        this.concert = concert;
+    }
+    @ManyToOne
+    public Concert getConcert() {
+        return concert;
+    }
+    public void setUser(User user) {
+        this.user = user;
+    }
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    public User getUser() {
+        return user;
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket [id=" + id + ", content=" + description + ", place="
+                + place + "]";
+    }
+
 
 }
