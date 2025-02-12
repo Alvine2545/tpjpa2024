@@ -1,6 +1,7 @@
 package jpa;
 
 
+import DTO.UserDto;
 import entities.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -68,11 +69,21 @@ public class JpaTest {
 		}
 	}
 
-	private void listUsers() {
+	/*private void listUsers() {
 		List<User> resultList = manager.createQuery("Select a From User a", User.class).getResultList();
 		System.out.println("num of user:" + resultList.size());
 		for (User next : resultList) {
 			System.out.println("next User: " + next);
+		}
+	}*/
+
+	private void listUsers() {
+		List<User> users = manager.createQuery("Select u From User u", User.class).getResultList();
+		System.out.println("Nombre d'utilisateurs: " + users.size());
+
+		for (User user : users) {
+			UserDto userDTO = UserDto.toUserDTO(user);
+			System.out.println(userDTO);
 		}
 	}
 
