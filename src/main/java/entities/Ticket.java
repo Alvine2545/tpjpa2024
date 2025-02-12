@@ -5,7 +5,9 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Ticket {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // Une seule table pour tous les types de tickets
+@DiscriminatorColumn(name = "ticket_type", discriminatorType = DiscriminatorType.STRING)
+public abstract class Ticket {
     private Long id;
     String statut;
     String description;
@@ -53,6 +55,7 @@ public class Ticket {
         this.concert = concert;
     }
     @ManyToOne
+    @JoinColumn(name = "concert_id")
     public Concert getConcert() {
         return concert;
     }

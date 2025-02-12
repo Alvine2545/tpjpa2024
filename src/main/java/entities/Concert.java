@@ -1,11 +1,9 @@
 package entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Concert {
@@ -18,7 +16,7 @@ public class Concert {
     int nbr_ticket;
     String capacity;
     String price;
-    ArrayList<Ticket> tickets;
+    private Set<Ticket> tickets = new HashSet<Ticket>();
 
     public void setId(Long id) {
         this.id = id;
@@ -71,12 +69,12 @@ public class Concert {
     public String getPrice() {
         return price;
     }
-    public void setTickets(ArrayList<Ticket> tickets) {
+    public void setTickets(Set<Ticket> tickets) {
         this.tickets = tickets;
     }
-    @OneToMany
-    public ArrayList<Ticket> getTickets() {
+    //@OneToMany
+    @OneToMany(mappedBy = "concert", cascade = CascadeType.ALL, orphanRemoval = true)
+    public Set<Ticket> getTickets() {
         return tickets;
     }
-
 }

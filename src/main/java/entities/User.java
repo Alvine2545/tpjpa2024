@@ -127,7 +127,8 @@ public class User {
     }
 
     // Relation OneToMany avec Ticket
-    @OneToMany(mappedBy = "user") // mappedBy correspond au champ 'user' dans Ticket
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    // mappedBy correspond au champ 'user' dans Ticket
     public Set<Ticket> getTickets() {
         return tickets;
     }

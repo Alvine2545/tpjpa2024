@@ -49,19 +49,23 @@ public class JpaTest {
 		int numOfEmployees = manager.createQuery("Select u From User u", User.class).getResultList().size();
 		if (numOfEmployees == 0) {
 			Role role = new Role("Administrateur");
+			Role role2 = new Role("Client");
+			Role rol3 = new Role("Organisateur");
 			manager.persist(role);
+			manager.persist(role2);
+			manager.persist(rol3);
 
 			manager.persist(new User("Jakab Gipsz", "jhgf", "jakab@gmail.com","0745256895","231 Avenue Goerges","Monacco", 25,role));
-			manager.persist(new User("Captain Nemo","jhgf", "nemo@gmail.com","0745252695","31 Avenue du Castre","Vorchez", 45,role));
+			manager.persist(new User("Captain Nemoi","jhgf", "nemo@gmail.com","0745252695","31 Avenue du Castre","Vorchez", 45,role));
 
 		}
 	}
 
-	/*private void listEmployees() {
-		List<Employee> resultList = manager.createQuery("Select a From Employee a", Employee.class).getResultList();
-		System.out.println("num of employess:" + resultList.size());
-		for (Employee next : resultList) {
-			System.out.println("next employee: " + next);
+	private void listUsers() {
+		List<User> resultList = manager.createQuery("Select a From User a", User.class).getResultList();
+		System.out.println("num of user:" + resultList.size());
+		for (User next : resultList) {
+			System.out.println("next User: " + next);
 		}
-	}*/
+	}
 }
