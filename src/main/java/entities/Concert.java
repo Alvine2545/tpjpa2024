@@ -18,6 +18,19 @@ public class Concert {
     String price;
     private Set<Ticket> tickets = new HashSet<Ticket>();
 
+    public Concert() {}
+    public Concert(String title, String description, String location, String image, int nbr_ticket, String capacity, String price) {
+        this.title = title;
+        this.description = description;
+        this.location = location;
+        this.image = image;
+        this.nbr_ticket = nbr_ticket;
+        this.capacity = capacity;
+        this.price = price;
+
+    }
+
+
     public void setId(Long id) {
         this.id = id;
     }

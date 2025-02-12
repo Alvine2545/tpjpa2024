@@ -3,15 +3,15 @@ package entities;
 import jakarta.persistence.*;
 
 @Entity
-@DiscriminatorValue("PREMIUM")
-public class TicketPremium extends Ticket {
+@DiscriminatorValue("STANDARD")
+public class TicketStandard extends Ticket {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     int id;
     private int nbrRestant;
     private double discount;
-    public TicketPremium() {}
-    public TicketPremium(int nbrRestant, int discount) {
+    public TicketStandard() {}
+    public TicketStandard(int nbrRestant, int discount) {
         this.nbrRestant = nbrRestant;
         this.discount = discount;
     }
@@ -27,4 +27,5 @@ public class TicketPremium extends Ticket {
     public String toString() {
         return super.toString() + " [Réduction: price=" + discount + " %]";
     }
+
 }

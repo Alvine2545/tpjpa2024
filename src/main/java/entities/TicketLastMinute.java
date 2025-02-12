@@ -6,14 +6,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
-@DiscriminatorValue("STANDARD")
+@DiscriminatorValue("LAST_MINUTE")
 public class TicketLastMinute extends Ticket {
 
     Long id;
     private int nbrRestant;
     public TicketLastMinute() {}
-    public TicketLastMinute(Long id, int nbrRestant) {
-        this.id = id;
+    public TicketLastMinute(int nbrRestant) {
         this.nbrRestant = nbrRestant;
     }
 
