@@ -91,8 +91,8 @@ public class JpaTest {
 	 * Add tickets on database
 	 */
 	private void createTickets() {
-		User user = manager.createQuery("SELECT u FROM User u WHERE u.name = 'Alice'", User.class).getSingleResult();
-		Concert concert = manager.createQuery("SELECT c FROM Concert c WHERE c.title = 'Rock Festival'", Concert.class).getSingleResult();
+		User user = manager.createQuery("SELECT u FROM User u WHERE u.email = 'alice@gmail.com'", User.class).getSingleResult();
+		Concert concert = manager.createQuery("SELECT c FROM Concert c WHERE c.id = 1", Concert.class).getSingleResult();
 
 		TicketStandard ticket1 = new TicketStandard(50, 25);
 		ticket1.setUser(user);
