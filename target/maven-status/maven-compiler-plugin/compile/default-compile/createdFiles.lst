@@ -2,6 +2,7 @@ DAO\UserDao.class
 jpa\JpaTest.class
 DAO\RoleDao.class
 entities\TicketStandard.class
+servlet\UserInfo.class
 DTO\TicketDto.class
 services\TicketService.class
 DTO\RoleDto.class
