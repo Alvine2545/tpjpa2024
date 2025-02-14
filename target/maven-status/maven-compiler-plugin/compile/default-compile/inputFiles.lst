@@ -11,6 +11,7 @@ C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\domai
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\dao\generic\DAO\UserDao.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\domain\Pet.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\domain\User.java
+C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\rest\RoleResource.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\dao\generic\DAO\ConcertDAO.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\domain\TicketLastMinute.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\DTO\testDto.java
@@ -23,9 +24,11 @@ C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\dao\g
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\dao\generic\DAO\GenericDaoImpl.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\domain\TicketStandard.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\domain\Concert.java
+C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\rest\TicketResource.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\RestServer.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\dao\generic\DAO\TicketDao.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\domain\TicketPremium.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\rest\PetResource.java
+C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\rest\UserResource.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\services\TicketService.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\DTO\RoleDto.java

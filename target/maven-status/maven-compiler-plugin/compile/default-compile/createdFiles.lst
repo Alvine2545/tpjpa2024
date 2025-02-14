@@ -1,4 +1,5 @@
 fr\istic\taa\jaxrs\dao\generic\AbstractJpaDao.class
+fr\istic\taa\jaxrs\rest\UserResource.class
 fr\istic\taa\jaxrs\domain\TicketLastMinute.class
 fr\istic\taa\jaxrs\domain\TicketPremium.class
 services\TicketService.class
@@ -17,6 +18,7 @@ services\UserService.class
 fr\istic\taa\jaxrs\dao\generic\DAO\GenericDao.class
 fr\istic\taa\jaxrs\dao\generic\DAO\UserDao.class
 fr\istic\taa\jaxrs\domain\Artiste.class
+fr\istic\taa\jaxrs\rest\RoleResource.class
 fr\istic\taa\jaxrs\dao\generic\IGenericDao.class
 fr\istic\taa\jaxrs\domain\Notification.class
 fr\istic\taa\jaxrs\rest\PetResource.class
@@ -27,5 +29,6 @@ fr\istic\taa\jaxrs\domain\User.class
 fr\istic\taa\jaxrs\dao\generic\EntityManagerHelper.class
 fr\istic\taa\jaxrs\dao\generic\DAO\GenericDaoImpl.class
 fr\istic\taa\jaxrs\domain\TicketStandard.class
+fr\istic\taa\jaxrs\rest\TicketResource.class
 fr\istic\taa\jaxrs\TestApplication.class
 fr\istic\taa\jaxrs\RestServer.class

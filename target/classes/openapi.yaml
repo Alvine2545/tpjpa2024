@@ -1,0 +1,35 @@
+openapi: 3.1.0
+info:
+  title: User API
+  description: API REST pour la gestion des utilisateurs
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080/api
+    description: Serveur local
+
+paths:
+  /users:
+    get:
+      summary: Récupérer tous les utilisateurs
+      operationId: getUsers
+      responses:
+        "200":
+          description: Liste des utilisateurs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+    post:
+      summary: Ajouter un utilisateur
+      operationId: addUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        "201":
+          description: Utilisateur ajouté
