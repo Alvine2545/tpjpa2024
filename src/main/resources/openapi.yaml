@@ -1,10 +1,10 @@
 openapi: 3.1.0
 info:
-  title: User API
+  title: Utilisateur API
   description: API REST pour la gestion des utilisateurs
   version: 1.0.0
 servers:
-  - url: http://localhost:8080/api
+  - url: http://localhost:8080
     description: Serveur local
 
 paths:
@@ -33,3 +33,29 @@ paths:
       responses:
         "201":
           description: Utilisateur ajouté
+
+  /roles:
+    get:
+      summary: Récupérer tous les roles
+      operationId: getRoles
+      responses:
+        "200":
+          description: Liste des roles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+    post:
+      summary: Ajouter un role
+      operationId: addRole
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: string
+      responses:
+        "201":
+          description: Role ajouté
