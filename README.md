@@ -1,7 +1,7 @@
 # Template de projet pour le TP JPA 2021 UniR
 ## Comment lancer
-    1 Lancer le serveur
-    2 Lancer la base de donnée
+    1 Lancer le serveur RestServer
+    2 Lancer la base de donnée ( show et run )
     3 Il s'agit de la base de donnée de l'ISTIC
     4 Utilisation de POSTMAN
 ## Modèle métier

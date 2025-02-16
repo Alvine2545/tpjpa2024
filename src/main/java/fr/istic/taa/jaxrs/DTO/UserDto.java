@@ -15,6 +15,15 @@ public class UserDto {
     private int age;
     private Set<String> roles; // On ne met que les noms des rôles
 
+    public UserDto(User user) {
+        this.id = user.getId();
+        this.name = user.getName();
+        this.email = user.getEmail();
+        this.phone = user.getPhone();
+        this.city = user.getCity();
+        this.age = user.getAge();
+        this.roles = user.getRoles().stream().map(Role::getName).collect(Collectors.toSet());
+    }
     public UserDto(Long id, String name, String email, String phone, String city, int age, Set<String> roles) {
         this.id = id;
         this.name = name;

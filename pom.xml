@@ -3,58 +3,49 @@
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>fr.istic.taa</groupId>
 	<artifactId>jaxrs-example</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<name>jaxrs-example</name>
 	<url>http://maven.apache.org</url>
-	<!-- <properties>
-		<maven.compiler.source>11</maven.compiler.source>
-		<maven.compiler.target>11</maven.compiler.target>
-	</properties>-->
+
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<!-- JUnit pour les tests -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- ==== JPA / Hibernate ==== -->
+
+		<!-- Hibernate ORM -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>6.2.7.Final</version>
 		</dependency>
+
+		<!-- SLF4J pour le logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.30</version>
 		</dependency>
+
+		<!-- Base de données HSQLDB -->
 		<dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
 			<version>2.7.2</version>
 		</dependency>
+
+		<!-- MySQL Connector -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.22</version>
-		</dependency>
-		<!-- JAX-RS API
-		<dependency>
-			<groupId>jakarta.ws.rs</groupId>
-			<artifactId>jakarta.ws.rs-api</artifactId>
-			<version>3.0.0</version>
-			<scope>provided</scope>
-		</dependency> -->
-
-		<!-- Hibernate + JPA -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>6.2.0.Final</version>
 		</dependency>
 
 		<!-- JSON Processing -->
@@ -63,15 +54,48 @@
 			<artifactId>jakarta.json</artifactId>
 			<version>2.0.1</version>
 		</dependency>
-		<!-- API des servlets -->
+
+		<!-- Jakarta Servlet API (nécessaire pour Undertow + Resteasy) -->
 		<dependency>
 			<groupId>jakarta.servlet</groupId>
 			<artifactId>jakarta.servlet-api</artifactId>
-			<version>5.0.0</version>
-			<scope>provided</scope>
+			<version>6.0.0</version>
 		</dependency>
 
-		<!-- Open API Integration: Swagger -->
+		<!-- Undertow avec Resteasy -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-undertow</artifactId>
+			<version>6.2.4.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jackson2-provider</artifactId>
+			<version>6.2.4.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jaxb-provider</artifactId>
+			<version>6.2.4.Final</version>
+		</dependency>
+
+		<!-- Initialisation correcte de RESTEasy avec Servlet -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-servlet-initializer</artifactId>
+			<version>6.2.4.Final</version>
+		</dependency>
+
+		<!-- Undertow Servlet API (ajouté pour éviter NoClassDefFoundError) -->
+		<dependency>
+			<groupId>io.undertow</groupId>
+			<artifactId>undertow-servlet</artifactId>
+			<version>2.3.7.Final</version>
+		</dependency>
+
+		<!-- Swagger pour documentation API -->
 		<dependency>
 			<groupId>io.swagger.core.v3</groupId>
 			<artifactId>swagger-jaxrs2-jakarta</artifactId>
@@ -83,51 +107,10 @@
 			<artifactId>swagger-jaxrs2-servlet-initializer-v2</artifactId>
 			<version>2.2.15</version>
 		</dependency>
-
-		<!-- ==== REST API ==== -->
-
-
-		<!--
-		https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-undertow -->
-		<dependency>
-			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>resteasy-undertow</artifactId>
-			<version>6.2.4.Final</version>
-		</dependency>
-
-
-		<!--
-		https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-jackson2-provider -->
-		<dependency>
-			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>resteasy-jackson2-provider</artifactId>
-			<version>6.2.4.Final</version>
-		</dependency>
-		<!--
-		https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-jaxb-provider -->
-		<dependency>
-			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>resteasy-jaxb-provider</artifactId>
-			<version>6.2.4.Final</version>
-		</dependency>
-
 	</dependencies>
+
 	<build>
 		<plugins>
-			<!-- <plugin>
-				 https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-maven-plugin
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>11.0.16</version>
-				<configuration>
-					<webApp>
-						<contextPath>/</contextPath>
-					</webApp>
-					<httpConnector>
-						<port>8090</port>
-					</httpConnector>
-				</configuration>
-			</plugin>-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
