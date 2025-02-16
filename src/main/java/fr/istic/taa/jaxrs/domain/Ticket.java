@@ -2,12 +2,13 @@ package fr.istic.taa.jaxrs.domain;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE) // Une seule table pour tous les types de tickets
 @DiscriminatorColumn(name = "ticket_type", discriminatorType = DiscriminatorType.STRING)
-public abstract class Ticket {
+public abstract class Ticket implements Serializable {
     private Long id;
     String statut;
     String description;
