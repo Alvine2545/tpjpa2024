@@ -1,11 +1,13 @@
 package fr.istic.taa.jaxrs.domain;
 
 import jakarta.persistence.*;
+
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class Role {
+public class Role implements Serializable {
 
     private Long id; // Utilisation de Long (objet) pour correspondre à l'ID JPA
     private String name;

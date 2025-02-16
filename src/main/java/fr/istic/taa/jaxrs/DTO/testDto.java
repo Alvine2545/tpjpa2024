@@ -22,7 +22,7 @@ public class testDto {
         }
 
         public static RoleDto toRoleDTO(Role role) {
-            return new RoleDto(role.getId(), role.getName());
+            return new RoleDto(role);
         }
 
         public static TicketDto toTicketDTO(Ticket ticket) {

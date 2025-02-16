@@ -31,5 +31,27 @@ public class UserResource {
         return Response.ok().entity("SUCCESS").build();
     }
 
+    @DELETE
+    @Path("/{id}")
+    public Response deleteUser(@PathParam("id") Long id) {
+        User user = userDao.findOne(id);
+        if (user == null) {
+            return Response.status(Response.Status.NOT_FOUND).entity("User not found").build();
+        }
+        userDao.delete(user);
+        return Response.status(Response.Status.NO_CONTENT).build();
+    }
 
+    /*@PUT
+    @Path("/{id}")
+    public Response updateUser(@PathParam("id") Long id, UserDto userDTO) {
+        User existingUser = userDao.findOne(id);
+        if (existingUser == null) {
+            return Response.status(Response.Status.NOT_FOUND).entity("Utilisateur non trouvé").build();
+        }
+        existingUser.setNom(userDTO.getNom());
+        existingUser.setEmail(userDTO.getEmail());
+        userDao.update(existingUser);
+        return Response.ok(new UserDto(existingUser)).build();
+    }*/
 }
