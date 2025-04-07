@@ -40,7 +40,7 @@ public class TestApplication extends Application {
         clazzes.add(PetResource.class);
         clazzes.add(UserResource.class);
         clazzes.add(RoleResource.class);
-//        clazzes.add(AcceptHeaderOpenApiResource.class);
+//      clazzes.add(AcceptHeaderOpenApiResource.class);
          
 
         return clazzes;
