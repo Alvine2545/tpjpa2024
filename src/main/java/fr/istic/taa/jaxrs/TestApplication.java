@@ -40,6 +40,7 @@ public class TestApplication extends Application {
         clazzes.add(PetResource.class);
         clazzes.add(UserResource.class);
         clazzes.add(RoleResource.class);
+        clazzes.add(fr.istic.taa.jaxrs.filters.CorsFilter.class);
 //      clazzes.add(AcceptHeaderOpenApiResource.class);
          
 
