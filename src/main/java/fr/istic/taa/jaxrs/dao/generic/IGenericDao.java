@@ -16,4 +16,6 @@ public interface IGenericDao<K, T extends Serializable> {
    void delete(final T entity);
  
    void deleteById(final K entityId);
+
+   T findByEmail(String email);
 }

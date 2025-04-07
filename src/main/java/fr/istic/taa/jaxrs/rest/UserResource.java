@@ -4,6 +4,8 @@ import fr.istic.taa.jaxrs.DTO.UserDto;
 import fr.istic.taa.jaxrs.dao.generic.DAO.UserDao;
 import fr.istic.taa.jaxrs.domain.Pet;
 import fr.istic.taa.jaxrs.domain.User;
+import fr.istic.taa.jaxrs.DTO.LoginRequestDto;
+import  fr.istic.taa.jaxrs.DTO.LoginResponseDto;
 import io.swagger.v3.oas.annotations.Parameter;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Response;
@@ -54,4 +56,18 @@ public class UserResource {
         userDao.update(existingUser);
         return Response.ok(new UserDto(existingUser)).build();
     }*/
+
+
+    @POST
+    @Path("/login")
+    public Response login(LoginRequestDto loginDto) {
+        User user = userDao.findByEmail(loginDto.getUsername());
+
+        if (user != null && user.getPassword().equals(loginDto.getPassword())) {
+            return Response.ok(new LoginResponseDto("user-" + user.getId())).build();
+        }
+
+        return Response.status(Response.Status.UNAUTHORIZED).build();
+    }
+
 }

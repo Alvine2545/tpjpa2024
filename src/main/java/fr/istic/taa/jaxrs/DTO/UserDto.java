@@ -44,4 +44,7 @@ public class UserDto {
                 user.getRoles().stream().map(Role::getName).collect(Collectors.toSet()) // Extrait les noms des rôles
         );
     }
+
 }
+
+
