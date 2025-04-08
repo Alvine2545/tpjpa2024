@@ -61,6 +61,7 @@ public class UserResource {
     @POST
     @Path("/login")
     public Response login(LoginRequestDto loginDto) {
+
         User user = userDao.findByEmail(loginDto.getUsername());
 
         if (user != null && user.getPassword().equals(loginDto.getPassword())) {

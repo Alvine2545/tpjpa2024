@@ -2,6 +2,7 @@ package fr.istic.taa.jaxrs.dao.generic;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.NoResultException;
 
 import java.io.Serializable;
 import java.util.List;
@@ -59,6 +60,14 @@ public abstract class AbstractJpaDao<K, T extends Serializable> implements IGene
 	}
 
 	public T findByEmail(String email) {
-		return entityManager.find(clazz, email);
+		try {
+
+			return entityManager.createQuery(
+							"SELECT u FROM " + clazz.getSimpleName() + " u WHERE u.email = :email", clazz)
+					.setParameter("email", email)
+					.getSingleResult();
+		} catch (NoResultException e) {
+			return null;
+		}
 	}
 }
