@@ -17,6 +17,7 @@
 package fr.istic.taa.jaxrs;
 
 import fr.istic.taa.jaxrs.domain.Role;
+import fr.istic.taa.jaxrs.rest.ConcertRessource;
 import fr.istic.taa.jaxrs.rest.PetResource;
 import fr.istic.taa.jaxrs.rest.RoleResource;
 import fr.istic.taa.jaxrs.rest.UserResource;
@@ -40,6 +41,7 @@ public class TestApplication extends Application {
         clazzes.add(PetResource.class);
         clazzes.add(UserResource.class);
         clazzes.add(RoleResource.class);
+        clazzes.add(ConcertRessource.class);
         clazzes.add(fr.istic.taa.jaxrs.filters.CorsFilter.class);
 //      clazzes.add(AcceptHeaderOpenApiResource.class);
          

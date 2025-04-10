@@ -1,5 +1,7 @@
 package fr.istic.taa.jaxrs.DTO;
 
+import fr.istic.taa.jaxrs.domain.Concert;
+
 public class ConcertDto {
     private Long id;
     private String title;
@@ -15,5 +17,13 @@ public class ConcertDto {
         this.location = location;
         this.price = price;
         this.nbrTicket = nbrTicket;
+    }
+    public ConcertDto(Concert concert) {
+        this.id = concert.getId();
+        this.title = concert.getTitle();
+        this.description = concert.getDescription();
+        this.location = concert.getLocation();
+        this.price = concert.getPrice();
+        this.nbrTicket = concert.getNbr_ticket();
     }
 }

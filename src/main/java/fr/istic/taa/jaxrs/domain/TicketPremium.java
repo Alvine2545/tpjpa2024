@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class TicketPremium extends Ticket {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    int id;
+    Long id;
     private int nbrRestant;
     private double discount;
     public TicketPremium() {}

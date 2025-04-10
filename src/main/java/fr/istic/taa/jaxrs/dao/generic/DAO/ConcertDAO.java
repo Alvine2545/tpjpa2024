@@ -7,7 +7,7 @@ import jakarta.persistence.EntityTransaction;
 
 import java.util.Date;
 
-public class ConcertDAO extends AbstractJpaDao<String, Concert> {
+public class ConcertDAO extends AbstractJpaDao<Long, Concert> {
     public ConcertDAO() {
         super();
         setClazz(Concert.class);

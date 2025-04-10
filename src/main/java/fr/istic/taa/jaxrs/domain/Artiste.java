@@ -1,21 +1,21 @@
 package fr.istic.taa.jaxrs.domain;
 
 public class Artiste {
-    private int id;
+    private Long id;
     private String nom;
     private String prenom;
     private String adresse;
-    public Artiste(int id, String nom, String prenom, String adresse) {
+    public Artiste(Long id, String nom, String prenom, String adresse) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
 
     }
-    public int getId() {
+    public Long getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
     public String getNom() {
