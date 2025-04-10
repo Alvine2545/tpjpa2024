@@ -55,6 +55,7 @@ public abstract class Ticket implements Serializable {
     public void setConcert(Concert concert) {
         this.concert = concert;
     }
+
     @ManyToOne
     @JoinColumn(name = "concert_id")
     public Concert getConcert() {

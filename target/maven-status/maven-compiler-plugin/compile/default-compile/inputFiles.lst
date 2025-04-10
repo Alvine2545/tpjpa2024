@@ -1,14 +1,14 @@
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\DTO\LoginRequestDto.java
+C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\jpa\JpaTest.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\dao\generic\IGenericDao.java
-C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\services\RoleService.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\filters\CorsFilter.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\domain\Notification.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\domain\Ticket.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\dao\generic\AbstractJpaDao.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\DTO\UserDto.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\DTO\ConcertDto.java
-C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\services\ConcertService.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\domain\Role.java
+C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\jpa\EntityManagerHelper.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\dao\generic\DAO\UserDao.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\domain\Pet.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\domain\User.java
@@ -18,7 +18,6 @@ C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\domai
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\DTO\testDto.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\dao\generic\DAO\RoleDao.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\TestApplication.java
-C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\services\UserService.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\domain\Artiste.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\DTO\TicketDto.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\DTO\LoginResponseDto.java
@@ -31,5 +30,4 @@ C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\dao\g
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\domain\TicketPremium.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\rest\PetResource.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\rest\UserResource.java
-C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\services\TicketService.java
 C:\Users\allad\IdeaProjects\SIR\tpjpa2024\src\main\java\fr\istic\taa\jaxrs\DTO\RoleDto.java

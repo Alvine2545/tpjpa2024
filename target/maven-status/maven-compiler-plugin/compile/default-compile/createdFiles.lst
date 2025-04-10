@@ -1,9 +1,9 @@
+jpa\JpaTest.class
 fr\istic\taa\jaxrs\filters\CorsFilter.class
 fr\istic\taa\jaxrs\dao\generic\AbstractJpaDao.class
 fr\istic\taa\jaxrs\rest\UserResource.class
 fr\istic\taa\jaxrs\domain\TicketLastMinute.class
 fr\istic\taa\jaxrs\domain\TicketPremium.class
-services\TicketService.class
 fr\istic\taa\jaxrs\DTO\RoleDto.class
 fr\istic\taa\jaxrs\DTO\ConcertDto.class
 fr\istic\taa\jaxrs\domain\Ticket.class
@@ -15,9 +15,7 @@ fr\istic\taa\jaxrs\DTO\UserDto.class
 fr\istic\taa\jaxrs\DTO\LoginRequestDto.class
 fr\istic\taa\jaxrs\dao\generic\DAO\RoleDao.class
 fr\istic\taa\jaxrs\DTO\LoginResponseDto.class
-services\RoleService.class
 fr\istic\taa\jaxrs\domain\Pet.class
-services\UserService.class
 fr\istic\taa\jaxrs\dao\generic\DAO\UserDao.class
 fr\istic\taa\jaxrs\domain\Artiste.class
 fr\istic\taa\jaxrs\rest\RoleResource.class
@@ -25,9 +23,9 @@ fr\istic\taa\jaxrs\dao\generic\IGenericDao.class
 fr\istic\taa\jaxrs\domain\Notification.class
 fr\istic\taa\jaxrs\rest\PetResource.class
 fr\istic\taa\jaxrs\dao\generic\DAO\TicketDao.class
-services\ConcertService.class
 fr\istic\taa\jaxrs\dao\generic\DAO\ConcertDAO.class
 fr\istic\taa\jaxrs\domain\User.class
+jpa\EntityManagerHelper.class
 fr\istic\taa\jaxrs\dao\generic\EntityManagerHelper.class
 fr\istic\taa\jaxrs\domain\TicketStandard.class
 fr\istic\taa\jaxrs\rest\TicketResource.class
