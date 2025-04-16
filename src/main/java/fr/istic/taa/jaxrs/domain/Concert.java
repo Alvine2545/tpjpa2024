@@ -19,6 +19,8 @@ public class Concert implements Serializable {
     String price;
     private Set<Ticket> tickets = new HashSet<Ticket>();
 
+    private Set<Artiste> artistes;
+
     public Concert() {}
     public Concert(String title, String description, String location, String image, int nbr_ticket, String capacity, String price) {
         this.title = title;
@@ -90,5 +92,13 @@ public class Concert implements Serializable {
     @OneToMany(mappedBy = "concert", cascade = CascadeType.ALL, orphanRemoval = true)
     public Set<Ticket> getTickets() {
         return tickets;
+    }
+
+    public void setArtistes(Set<Artiste> artistes) {
+        this.artistes = artistes;
+    }
+    @ManyToMany(mappedBy = "concerts")
+    public Set<Artiste> getArtistes() {
+        return artistes;
     }
 }

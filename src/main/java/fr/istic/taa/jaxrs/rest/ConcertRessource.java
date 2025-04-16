@@ -65,6 +65,7 @@ public class ConcertRessource {
         }
         existingUser.setNom(userDTO.getNom());
         existingUser.setEmail(userDTO.getEmail());
+        existingUser.setArtistes(updatedConcert.getArtistes()); //A revoir
         userDao.update(existingUser);
         return Response.ok(new UserDto(existingUser)).build();
     }*/
