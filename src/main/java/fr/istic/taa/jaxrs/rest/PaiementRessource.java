@@ -22,7 +22,7 @@ public class PaiementRessource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response createCheckoutSession(TicketPaymentRequest request) {
-        Stripe.apiKey = "sk_test";
+        Stripe.apiKey = "";
 
         SessionCreateParams params =
                 SessionCreateParams.builder()
@@ -35,7 +35,7 @@ public class PaiementRessource {
                                         .setPriceData(
                                                 SessionCreateParams.LineItem.PriceData.builder()
                                                         .setCurrency("eur")
-                                                        .setUnitAmount((long) (request.getAmount() * 100)) // Stripe attend les centimes
+                                                        .setUnitAmount((long) (request.getAmount() * 100))
                                                         .setProductData(
                                                                 SessionCreateParams.LineItem.PriceData.ProductData.builder()
                                                                         .setName(request.getLabel())
