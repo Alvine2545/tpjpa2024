@@ -29,7 +29,9 @@ public class PaiementRessource {
                         .setSuccessUrl("http://localhost:4200/paiement/success?session_id={CHECKOUT_SESSION_ID}")
                         .setCancelUrl("http://localhost:4200/paiement/cancel")
                         .addLineItem(
+
                                 SessionCreateParams.LineItem.builder()
+
                                         .setQuantity((long) request.getQuantity())
                                         .setPriceData(
                                                 SessionCreateParams.LineItem.PriceData.builder()
