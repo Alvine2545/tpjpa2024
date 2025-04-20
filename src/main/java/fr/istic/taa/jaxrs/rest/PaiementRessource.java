@@ -22,7 +22,7 @@ public class PaiementRessource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response createCheckoutSession(TicketPaymentRequest request) {
-        Stripe.apiKey = "";
+
 
         SessionCreateParams params =
                 SessionCreateParams.builder()
