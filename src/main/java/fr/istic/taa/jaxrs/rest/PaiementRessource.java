@@ -23,7 +23,6 @@ public class PaiementRessource {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response createCheckoutSession(TicketPaymentRequest request) {
 
-
         SessionCreateParams params =
                 SessionCreateParams.builder()
                         .setMode(SessionCreateParams.Mode.PAYMENT)
