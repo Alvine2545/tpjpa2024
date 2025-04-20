@@ -14,6 +14,9 @@ public abstract class Ticket implements Serializable {
     String description;
     Date date;
     String place;
+    int nbr_ticket;
+    String capacity;
+    String price;
     Concert concert;
     User user;
 
@@ -76,5 +79,9 @@ public abstract class Ticket implements Serializable {
                 + place + "]";
     }
 
+    @Transient
+    public String getType() {
+        return this.getClass().getSimpleName();
+    }
 
 }

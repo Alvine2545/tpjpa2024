@@ -17,10 +17,7 @@
 package fr.istic.taa.jaxrs;
 
 import fr.istic.taa.jaxrs.domain.Role;
-import fr.istic.taa.jaxrs.rest.ConcertRessource;
-import fr.istic.taa.jaxrs.rest.PetResource;
-import fr.istic.taa.jaxrs.rest.RoleResource;
-import fr.istic.taa.jaxrs.rest.UserResource;
+import fr.istic.taa.jaxrs.rest.*;
 import io.swagger.v3.jaxrs2.integration.resources.OpenApiResource;
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
@@ -42,6 +39,8 @@ public class TestApplication extends Application {
         clazzes.add(UserResource.class);
         clazzes.add(RoleResource.class);
         clazzes.add(ConcertRessource.class);
+        clazzes.add(GenreRessource.class);
+        clazzes.add(PaiementRessource.class);
         clazzes.add(fr.istic.taa.jaxrs.filters.CorsFilter.class);
 //      clazzes.add(AcceptHeaderOpenApiResource.class);
          

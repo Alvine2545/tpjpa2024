@@ -3,6 +3,7 @@ package fr.istic.taa.jaxrs.domain;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,24 +14,22 @@ public class Concert implements Serializable {
     String title;
     String description;
     String location;
-    String image;
-    int nbr_ticket;
-    String capacity;
-    String price;
+    String imagePath;
+    Date date;
+    Genre genre;
+
     private Set<Ticket> tickets = new HashSet<Ticket>();
 
     private Set<Artiste> artistes;
 
     public Concert() {}
-    public Concert(String title, String description, String location, String image, int nbr_ticket, String capacity, String price) {
+    public Concert(String title, String description, String location, String image, Date date, Genre genre) {
         this.title = title;
         this.description = description;
         this.location = location;
-        this.image = image;
-        this.nbr_ticket = nbr_ticket;
-        this.capacity = capacity;
-        this.price = price;
-
+        this.imagePath = image;
+        this.date = date;
+        this.genre = genre;
     }
 
 
@@ -43,62 +42,68 @@ public class Concert implements Serializable {
     public Long getId() {
         return id;
     }
+
     public void setTitle(String title) {
         this.title = title;
     }
     public String getTitle() {
         return title;
     }
+
     public void setDescription(String description) {
         this.description = description;
     }
     public String getDescription() {
         return description;
     }
+
     public void setLocation(String location) {
         this.location = location;
     }
     public String getLocation() {
         return location;
     }
+
     public void setImage(String image) {
-        this.image = image;
+        this.imagePath = image;
     }
     public String getImage() {
-        return image;
+        return imagePath;
     }
-    public void setNbr_ticket(int nbr_ticket) {
-        this.nbr_ticket = nbr_ticket;
-    }
-    public int getNbr_ticket() {
-        return nbr_ticket;
-    }
-    public void setCapacity(String capacity) {
-        this.capacity = capacity;
-    }
-    public String getCapacity() {
-        return capacity;
-    }
-    public void setPrice(String price) {
-        this.price = price;
-    }
-    public String getPrice() {
-        return price;
-    }
-    public void setTickets(Set<Ticket> tickets) {
-        this.tickets = tickets;
-    }
-    //@OneToMany
+
+
     @OneToMany(mappedBy = "concert", cascade = CascadeType.ALL, orphanRemoval = true)
     public Set<Ticket> getTickets() {
         return tickets;
     }
-
-    public void setArtistes(Set<Artiste> artistes) {
-        this.artistes = artistes;
+    public void setTickets(Set<Ticket> tickets) {
+        this.tickets = tickets;
     }
+
+
     @ManyToMany(mappedBy = "concerts")
     public Set<Artiste> getArtistes() {
         return artistes;
     }
+    public void setArtistes(Set<Artiste> artistes) {
+        this.artistes = artistes;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date getDate() {
+        return date;
+    }
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "genre_id")
+    public Genre getGenre() {
+        return genre;
+    }
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
+
 }

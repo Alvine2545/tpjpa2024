@@ -1,16 +1,23 @@
 package fr.istic.taa.jaxrs.rest;
 
-import fr.istic.taa.jaxrs.DTO.LoginRequestDto;
-import fr.istic.taa.jaxrs.DTO.LoginResponseDto;
 import fr.istic.taa.jaxrs.DTO.TicketDto;
-import fr.istic.taa.jaxrs.DTO.UserDto;
+import fr.istic.taa.jaxrs.DTO.TicketPaymentRequest;
 import fr.istic.taa.jaxrs.dao.generic.DAO.TicketDao;
-import fr.istic.taa.jaxrs.dao.generic.DAO.UserDao;
 import fr.istic.taa.jaxrs.domain.Ticket;
-import fr.istic.taa.jaxrs.domain.User;
 import io.swagger.v3.oas.annotations.Parameter;
 import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+
+
+// Stripe integration
+import com.stripe.Stripe;
+import com.stripe.model.checkout.Session;
+import com.stripe.param.checkout.SessionCreateParams;
+
+import java.util.HashMap;
+import java.util.Map;
+
 
 @Path("/tickets")
 @Produces({"application/json", "application/xml"})
@@ -58,6 +65,8 @@ public class TicketResource {
         ticketDao.update(existingTicket);
         return Response.ok(new TicketDto(existingTicket)).build();
     }*/
+
+
 
 
 }

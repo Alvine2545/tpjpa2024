@@ -43,8 +43,8 @@ public class testDto {
                     concert.getTitle(),
                     concert.getDescription(),
                     concert.getLocation(),
-                    concert.getPrice(),
-                    concert.getNbr_ticket()
+                    concert.getImage(),
+                    concert.getGenre()
             );
         }
 
