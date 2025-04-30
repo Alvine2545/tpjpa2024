@@ -11,12 +11,14 @@ import java.util.Date;
 public abstract class Ticket implements Serializable {
     private Long id;
     String statut;
+    private String ticketNumber;
     String description;
     Date purchaseDate;
     String place;
+    private boolean cancelled = false;
     int nbr_ticket;
     String capacity;
-    String price;
+    Double price;
     Concert concert;
     User user;
 
@@ -84,5 +86,19 @@ public abstract class Ticket implements Serializable {
         return this.getClass().getSimpleName();
     }
 
+    public boolean isCancelled() {
+        return cancelled;
+    }
+
+    public void setCancelled(boolean cancelled) {
+        this.cancelled = cancelled;
+    }
+
+    public Double getPrice(){
+        return this.price;
+    }
+    public void setPrice(Double price){
+        this.price = price;
+    }
 
 }

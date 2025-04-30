@@ -31,3 +31,6 @@ Ticket: Abstract class (Pas de création d'objet de cette classe). Classe mère 
 ## Ce qui ne marche pas
 - Tous les liens retournent une erreur 404
 - L'héritage entre les différents type de tickets
+
+
+Pour des raisons de simplicité, on aurait pu changé l'héritage des tickets

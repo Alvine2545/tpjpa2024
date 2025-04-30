@@ -14,7 +14,7 @@ public class ConcertDto {
     private String imagePath;
     private int nbrTicket;
     private Set<Long> artisteIds;
-    private Genre genre;
+    private String genre;
     private Date date;
 
 
@@ -24,7 +24,7 @@ public class ConcertDto {
         this.description = description;
         this.location = location;
         this.imagePath = imagePath;
-        this.genre = genre;
+        this.genre = genre.getName();
         this.nbrTicket = capacity;
     }
     public ConcertDto(Concert concert) {
@@ -33,7 +33,7 @@ public class ConcertDto {
         this.description = concert.getDescription();
         this.location = concert.getLocation();
         this.imagePath = concert.getImage();
-        this.genre = concert.getGenre();
+        this.genre = concert.getGenre().getName();
         this.nbrTicket = concert.getCapacity();
         this.date = concert.getDate();
     }
@@ -46,6 +46,6 @@ public class ConcertDto {
     public String getImagePath() { return imagePath; }
     public int getNbrTicket() { return nbrTicket; }
     public Set<Long> getArtisteIds() { return artisteIds; }
-    public String getGenreName() { return genre.getName(); }
+    public String getGenreName() { return genre; }
     public Date getDate() { return date; }
 }

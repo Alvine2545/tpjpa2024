@@ -5,8 +5,7 @@ import jakarta.persistence.*;
 @Entity
 @DiscriminatorValue("STANDARD")
 public class TicketStandard extends Ticket {
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+
     Long id;
     private int nbrRestant;
     private double discount;
@@ -27,5 +26,22 @@ public class TicketStandard extends Ticket {
     public String toString() {
         return super.toString() + " [Réduction: price=" + discount + " %]";
     }
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public int getNbrRestant() {
+        return nbrRestant;
+    }
+    public void setNbrRestant(int nbrRestant) {
+        this.nbrRestant = nbrRestant;
+    }
+
+
 
 }

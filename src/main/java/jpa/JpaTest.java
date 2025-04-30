@@ -78,7 +78,16 @@ public class JpaTest {
         manager.persist(g2);
 
         Concert c = new Concert("Concert1","Pas de description", "RUE DU PARVIS, RENNES-EN-GRENOUILLES", "a.jpeg", new Date(), 1235.2, 56, 89, g);
-       manager.persist(c);
+        manager.persist(c);
+
+        Genre g5 = new Genre("BUZZ");
+        manager.persist(g5);
+
+        Concert c1 = new Concert("Concert2","Pas de description", "RUE DU FOI, RENNES", "g.jpeg", new Date(), 1235.2, 56, 89, g5);
+        manager.persist(c1);
+
+        TicketOffre t = new TicketOffre("STANDARD", 1520.0, 89, "Ticketstandard", c1);
+        manager.persist(t);
 
         //}
     }

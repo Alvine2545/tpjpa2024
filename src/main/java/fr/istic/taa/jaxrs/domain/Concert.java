@@ -1,5 +1,6 @@
 package fr.istic.taa.jaxrs.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -126,6 +127,7 @@ public class Concert implements Serializable {
     }
 
     @OneToMany(mappedBy = "concert", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     public Set<Ticket> getTickets() {
         return tickets;
     }
