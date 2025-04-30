@@ -3,7 +3,7 @@
     1 Lancer le serveur (le fichier RestServer)
     2 Lancer la base de donnée ( show-hsqldb.sh et run-hsqldb-server.sh )
     3 Base de donnée de l'ISTIC
-    4 Utilisation de POSTMAN pour les requêtes
+    4 Utilisation de swagger pour les requêtes
 ## Modèle métier
 Le modèle métier se trouve dans le fichier tickettingDiagram.drawio.png à la raccine du projet. 
 
@@ -29,8 +29,5 @@ Ticket: Abstract class (Pas de création d'objet de cette classe). Classe mère 
 - 
 
 ## Ce qui ne marche pas
-- Tous les liens retournent une erreur 404
 - L'héritage entre les différents type de tickets
-
-
-Pour des raisons de simplicité, on aurait pu changé l'héritage des tickets
+Pour des raisons de simplicité, on aurait pu changé l'héritage des tickets en créant une simple classe qui sera liée à concert.
