@@ -17,8 +17,7 @@ public class Artiste  implements Serializable {
     private Set<Concert> concerts;
 
     public Artiste() {}
-    public Artiste(Long id, String nom, String prenom, String adresse, String style) {
-        this.id = id;
+    public Artiste(String nom, String prenom, String adresse, String style) {
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;

@@ -12,7 +12,7 @@ public abstract class Ticket implements Serializable {
     private Long id;
     String statut;
     String description;
-    Date date;
+    Date purchaseDate;
     String place;
     int nbr_ticket;
     String capacity;
@@ -25,7 +25,7 @@ public abstract class Ticket implements Serializable {
     }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
         return id;
     }
@@ -42,11 +42,11 @@ public abstract class Ticket implements Serializable {
         return description;
     }
     public void setDate(Date date) {
-        this.date = date;
+        this.purchaseDate = date;
     }
     @Temporal(TemporalType.DATE)
     public Date getDate() {
-        return date;
+        return purchaseDate;
     }
     public void setPlace(String place) {
         this.place = place;
@@ -83,5 +83,6 @@ public abstract class Ticket implements Serializable {
     public String getType() {
         return this.getClass().getSimpleName();
     }
+
 
 }

@@ -41,7 +41,9 @@ public class TestApplication extends Application {
         clazzes.add(ConcertRessource.class);
         clazzes.add(GenreRessource.class);
         clazzes.add(PaiementRessource.class);
+        clazzes.add(StatResource.class);
         clazzes.add(fr.istic.taa.jaxrs.filters.CorsFilter.class);
+        clazzes.add(SwaggerRessource.class);
 //      clazzes.add(AcceptHeaderOpenApiResource.class);
          
 

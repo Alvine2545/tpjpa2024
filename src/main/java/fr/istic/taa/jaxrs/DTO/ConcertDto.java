@@ -17,13 +17,15 @@ public class ConcertDto {
     private Genre genre;
     private Date date;
 
-    public ConcertDto(Long id, String title, String description, String location, String imagePath, Genre genre) {
+
+    public ConcertDto(Long id, String title, String description, String location, String imagePath, Integer capacity, Genre genre) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.location = location;
         this.imagePath = imagePath;
         this.genre = genre;
+        this.nbrTicket = capacity;
     }
     public ConcertDto(Concert concert) {
         this.id = concert.getId();
@@ -32,6 +34,7 @@ public class ConcertDto {
         this.location = concert.getLocation();
         this.imagePath = concert.getImage();
         this.genre = concert.getGenre();
+        this.nbrTicket = concert.getCapacity();
         this.date = concert.getDate();
     }
 

@@ -44,6 +44,7 @@ public class testDto {
                     concert.getDescription(),
                     concert.getLocation(),
                     concert.getImage(),
+                    concert.getCapacity(),
                     concert.getGenre()
             );
         }

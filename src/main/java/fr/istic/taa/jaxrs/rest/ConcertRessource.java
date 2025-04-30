@@ -44,6 +44,14 @@ public class ConcertRessource {
         return Response.ok(concertDtos).build();
     }
 
+    @GET
+    public List<Concert> getConcerts(@QueryParam("valide") Boolean valide) {
+        if (valide != null && !valide) {
+            return concertDao.getConcertsNonValides();
+        }
+        return concertDao.findAll();
+    }
+
     @POST
     @Consumes("application/json")
     public Response addConcert(@Parameter(description = "User object that needs to be added to the store", required = true) Concert concert) {
@@ -75,19 +83,6 @@ public class ConcertRessource {
         }
         return Response.ok(file).build();
     }
-    /*@PUT
-    @Path("/{id}")
-    public Response updateUser(@PathParam("id") Long id, UserDto userDTO) {
-        User existingUser = userDao.findOne(id);
-        if (existingUser == null) {
-            return Response.status(Response.Status.NOT_FOUND).entity("Utilisateur non trouvé").build();
-        }
-        existingUser.setNom(userDTO.getNom());
-        existingUser.setEmail(userDTO.getEmail());
-        existingUser.setArtistes(updatedConcert.getArtistes()); //A revoir
-        userDao.update(existingUser);
-        return Response.ok(new UserDto(existingUser)).build();
-    }*/
 
     @GET
     @Path("/search")
@@ -103,6 +98,53 @@ public class ConcertRessource {
                 .map(ConcertDto::new)
                 .collect(Collectors.toList());
         return Response.ok(concertDtos).build();
+    }
+
+    @PUT
+    @Path("/{id}")
+    public Concert updateConcert(@PathParam("id") Long id, Concert updatedConcert) {
+        Concert existing = concertDao.findOne(id);
+        if (existing == null) throw new WebApplicationException("Concert not found", 404);
+
+        existing.setTitle(updatedConcert.getTitle());
+        existing.setDescription(updatedConcert.getDescription());
+        existing.setDate(updatedConcert.getDate());
+        existing.setLocation(updatedConcert.getLocation());
+        existing.setPrice(updatedConcert.getPrice());
+        existing.setImage(updatedConcert.getImage());
+        existing.setPopularity(updatedConcert.getPopularity());
+        existing.setGenre(updatedConcert.getGenre());
+
+        return concertDao.update(existing);
+    }
+
+    @GET
+    @Path("/{id}/stock")
+    public int getAvailableTickets(@PathParam("id") Long id) {
+        Concert concert = concertDao.findOne(id);
+        return concert.getCapacity() - concert.getTickets().size();
+    }
+
+   /* @POST
+    @Path("/{id}/ticket")
+    public int addTicketsToConcert(@PathParam("id") Long id) {
+        if (concert.getTickets().size() >= concert.getCapacity()) {
+            throw new WebApplicationException("Complet", 400);
+        }
+
+    }*/
+
+    @PUT
+    @Path("/{id}/valider")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response validerConcert(@PathParam("id") Long id) {
+        Concert concert = concertDao.findOne(id);
+        if (concert == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        concert.setValide(true);
+        concertDao.save(concert);
+        return Response.ok().build();
     }
 
 }

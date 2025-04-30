@@ -23,15 +23,14 @@ public class PaiementRessource {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response createCheckoutSession(TicketPaymentRequest request) {
 
+        Stripe.apiKey = "sk_test_51RG36iQfq8LliU7Arv0QlgZy5jEV5Uk07XK4cQ9nzHmau36dPdjLubJJVmkiWS950ffduTxjXAKN1lOcViNPvlIw00cld3GUkD";
         SessionCreateParams params =
                 SessionCreateParams.builder()
                         .setMode(SessionCreateParams.Mode.PAYMENT)
                         .setSuccessUrl("http://localhost:4200/paiement/success?session_id={CHECKOUT_SESSION_ID}")
                         .setCancelUrl("http://localhost:4200/paiement/cancel")
                         .addLineItem(
-
                                 SessionCreateParams.LineItem.builder()
-
                                         .setQuantity((long) request.getQuantity())
                                         .setPriceData(
                                                 SessionCreateParams.LineItem.PriceData.builder()

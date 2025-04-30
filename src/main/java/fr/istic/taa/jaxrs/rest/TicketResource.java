@@ -66,7 +66,16 @@ public class TicketResource {
         return Response.ok(new TicketDto(existingTicket)).build();
     }*/
 
+    /*@Path("/{id}/status")
+    public ResponseEntity<Ticket> updateTicketStatus(
+           Long ticketId, Map<String, String> statusUpdate) {
 
+        Ticket updatedTicket = ticketService.updateStatus(
+                ticketId,
+                statusUpdate.get("status")
+        );
+        return ResponseEntity.ok(updatedTicket);
+    }*/
 
 
 }

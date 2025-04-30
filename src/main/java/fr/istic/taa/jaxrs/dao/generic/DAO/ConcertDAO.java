@@ -17,6 +17,14 @@ public class ConcertDAO extends AbstractJpaDao<Long, Concert> {
         setClazz(Concert.class);
     }
 
+    public List<Concert> findConcertsByPriceRange(Double minPrice, Double maxPrice) {
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Concert> query = cb.createQuery(Concert.class);
+        Root<Concert> concert = query.from(Concert.class);
+        query.select(concert).where(cb.between(concert.get("price"), minPrice, maxPrice));
+        return entityManager.createQuery(query).getResultList();
+    }
+
     public List<Concert> searchConcerts(String artistName, String location, Date date, Long genreId, String sortBy) {
         StringBuilder jpql = new StringBuilder("SELECT DISTINCT c FROM Concert c LEFT JOIN c.artistes a LEFT JOIN c.tickets t WHERE 1=1");
 
@@ -61,5 +69,11 @@ public class ConcertDAO extends AbstractJpaDao<Long, Concert> {
         }
         return query.getResultList();
     }
+
+    public List<Concert> getConcertsNonValides() {
+        return entityManager.createQuery("SELECT c FROM Concert c WHERE c.valide = false", Concert.class)
+                .getResultList();
+    }
+
 
 }

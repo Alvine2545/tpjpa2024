@@ -8,91 +8,109 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+//@NamedQuery(name = "Concert.findByDate", query = "SELECT c FROM Concert c WHERE c.date = :date")
 public class Concert implements Serializable {
 
     private Long id;
-    String title;
-    String description;
-    String location;
-    String imagePath;
-    Date date;
-    Genre genre;
-
-    private Set<Ticket> tickets = new HashSet<Ticket>();
-
-    private Set<Artiste> artistes;
+    private String title;
+    private String description;
+    private String location;
+    private String imagePath;
+    private Date date;
+    private Double price;
+    private Integer popularity;
+    private Genre genre;
+    private Set<Ticket> tickets = new HashSet<>();
+    private Set<Artiste> artistes = new HashSet<>();
+    private Integer capacity;
+    private boolean valide = false;
 
     public Concert() {}
-    public Concert(String title, String description, String location, String image, Date date, Genre genre) {
+
+
+    public Concert(String title, String description, String location, String image, Date date, Double price, Integer popularity, Integer capacity, Genre genre) {
         this.title = title;
         this.description = description;
         this.location = location;
         this.imagePath = image;
         this.date = date;
+        this.price = price;
+        this.popularity = popularity;
+        this.capacity = capacity;
         this.genre = genre;
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public Long getId() {
+        return id;
+    }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    @Id
-    @GeneratedValue
-    public Long getId() {
-        return id;
+    public Integer getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Integer capacity) {
+        this.capacity = capacity;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     public void setTitle(String title) {
         this.title = title;
     }
-    public String getTitle() {
-        return title;
+
+    public String getDescription() {
+        return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
-    public String getDescription() {
-        return description;
+
+    public String getLocation() {
+        return location;
     }
 
     public void setLocation(String location) {
         this.location = location;
     }
-    public String getLocation() {
-        return location;
+
+    public String getImage() {
+        return imagePath;
     }
 
     public void setImage(String image) {
         this.imagePath = image;
     }
-    public String getImage() {
-        return imagePath;
+
+    public Double getPrice() {
+        return price;
     }
 
-
-    @OneToMany(mappedBy = "concert", cascade = CascadeType.ALL, orphanRemoval = true)
-    public Set<Ticket> getTickets() {
-        return tickets;
-    }
-    public void setTickets(Set<Ticket> tickets) {
-        this.tickets = tickets;
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
-
-    @ManyToMany(mappedBy = "concerts")
-    public Set<Artiste> getArtistes() {
-        return artistes;
+    public Integer getPopularity() {
+        return popularity;
     }
-    public void setArtistes(Set<Artiste> artistes) {
-        this.artistes = artistes;
+
+    public void setPopularity(Integer popularity) {
+        this.popularity = popularity;
     }
 
     @Temporal(TemporalType.TIMESTAMP)
     public Date getDate() {
         return date;
     }
+
     public void setDate(Date date) {
         this.date = date;
     }
@@ -102,8 +120,45 @@ public class Concert implements Serializable {
     public Genre getGenre() {
         return genre;
     }
+
     public void setGenre(Genre genre) {
         this.genre = genre;
     }
 
+    @OneToMany(mappedBy = "concert", cascade = CascadeType.ALL, orphanRemoval = true)
+    public Set<Ticket> getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(Set<Ticket> tickets) {
+        this.tickets = tickets;
+    }
+
+    @ManyToMany
+    @JoinTable(
+            name = "concert_artiste",
+            joinColumns = @JoinColumn(name = "concert_id"),
+            inverseJoinColumns = @JoinColumn(name = "artiste_id")
+    )
+    public Set<Artiste> getArtistes() {
+        return artistes;
+    }
+
+    public void setArtistes(Set<Artiste> artistes) {
+        this.artistes = artistes;
+    }
+
+    @Override
+    public String toString() {
+        return "Concert [id=" + id + ", title=" + title + ", date=" + date + ", location=" + location + ", price=" + price + "]";
+    }
+
+    @Column(nullable = false)
+    public boolean isValide() {
+        return valide;
+    }
+
+    public void setValide(boolean valide) {
+        this.valide = valide;
+    }
 }
